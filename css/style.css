@@ -42,17 +42,17 @@ nav .container{
     height: 50px;
 }
 /* كلاس جافاسكربت  */
-.filter-height{
+.filter-by-region.filter-height{
     height: 250px !important;
 }
-.main-page header .filter-by-region .filter{
-    background-color: #9e9e9e21;
+.main-page header .filter-by-region .filter-head{
+    background-color: #cb5f5f;
     padding: 10px;
-   
+    width: 130px;
 }
 .main-page header .filter-by-region ul{
     padding: 10px;
-    background-color: #9e9e9e21;
+    background-color: #cb5f5f;
     height: 100%;
     margin-top: 10px;
 }
