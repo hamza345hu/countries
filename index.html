@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+          <h1 class="logo">
+            Where In The World?
+          </h1>
+          <div class="switch-theme">
+            <i class="far fa-moon light"></i>
+            <i class="fas fa-moon dark"></i>
+            Dark Mode
+          </div>
+        </div>
+      </nav>
+      <div class="main-page">
+        <div class="content">
+          <header>
+            <div class="container">
+              <div class="search-by-name">
+                <i class="fas fa-search"></i>
+                <input type="text" onkeyup="searchValue(this.value)" class="search" placeholder='searach for a country ...' id='search'>
+              </div>
+              <div class="filter-by-region">
+                <div class="filter">Filter By Region <i class="fas fa-chevron-down"></i></div>
+                <ul name="continent" id="continent" class="continent">
+                  <li>All</li>
+                  <li>Africa</li>
+                  <li>America</li>
+                  <li>Asia</li>
+                  <li>Europe</li>
+                  <li>Oceonia</li>
+                </ul>
+              </div>
+            </div>
+          </header>
+          <section class='countries'>
+            <div class="container">
+              
+            </div>
+          </section>
+        </div>
+        <div class="details">
+          
+        </div>
+      </div> 
+    <script src="main.js"></script>
+</body>
+</html>

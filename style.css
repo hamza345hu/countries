@@ -1,0 +1,130 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+body{
+    background-color: #F4F6F6 !important;
+}
+nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 20px; 
+}
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* content............................................... */
+.main-page .content header  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+.main-page header .search-by-name #search{
+    padding: 10px;
+    font-size: 17px;
+}  
+.main-page header .filter-by-region{
+    position: absolute;
+    top: 0;
+    right: 6px;
+    padding: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.2s;
+    height: 50px;
+}
+/* كلاس جافاسكربت  */
+.filter-height{
+    height: 250px !important;
+}
+.main-page header .filter-by-region .filter{
+    background-color: #9e9e9e21;
+    padding: 10px;
+   
+}
+.main-page header .filter-by-region ul{
+    padding: 10px;
+    background-color: #9e9e9e21;
+    height: 100%;
+    margin-top: 10px;
+}
+.main-page header .filter-by-region ul li{
+    padding: 5px;
+    
+}
+.countries  .container{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+}
+.countries  .container .box{
+    width: 230px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #d7c8c8;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.countries  .container .box :is(h2,h4){
+    padding: 10px 15px;
+}
+.countries  .container .box img{
+    width: inherit;
+    height: 120px;
+    border-radius: inherit;
+}
+
+/* details ...............................................*/
+.main-page .details{
+    height: 500px;
+    position: relative;
+}
+.main-page .details div .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* .main-page .details .container >div{
+    height: 200px;
+} */
+.main-page .details .container >div:first-child{
+    width: 40%;
+}
+.main-page .details .container >div:first-child img{
+    text-align: center;
+}
+.main-page .details .container >div:nth-child(2){
+    width: 25%;
+}
+.main-page .back{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #e5e5eb;
+    padding: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.main-page .details .container >div:last-child{
+    width: 25%;
+}
+.main-page .details .container >div :is(h2,h4){
+    padding: 10px 15px;
+}
