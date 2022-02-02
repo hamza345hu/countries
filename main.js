@@ -7,6 +7,7 @@ document.querySelector('nav .switch-theme').onclick=function () {
     this.children[1].classList.toggle('hidden')
     document.querySelector('body').classList.toggle('dark')
     document.querySelector('nav').classList.toggle('light-dark')
+    document.querySelector('.search-by-name').classList.toggle('light-dark')
     document.querySelector('.filter-by-region ul').classList.toggle('light-dark')
     document.querySelector('.filter-head').classList.toggle('light-dark')
     document.querySelectorAll('.box ').forEach((b)=>{
@@ -56,7 +57,7 @@ function boxContent(i,data) {
         <div class="container">
             <div><img src="${data[i].flags.png}"></div>
             <div class="detail-content">
-                <h3>${data[i].name}</h3>
+                <h2>${data[i].name}</h2>
                 <div>
                     <div>
                         <p>Population: <span>${data[i].population}</span></p>
@@ -71,7 +72,7 @@ function boxContent(i,data) {
                         <p>Currencies: <span>${data[i].currencies[0].name}</span></p>
                     </div>
                 </div> 
-                <h3>Border Countries: <span>${data[i].borders}</span></h3>
+                <h4>Border Countries: <span>${data[i].borders}</span></h4>
             </div>
         </div>
         <button type="submit" class="back" onclick=backToCountries()>Back</button>
@@ -92,12 +93,12 @@ function searchValue(v){
     if (v!='') {
         countriesC.innerHTML=''
         for (let j = 0; j < vData.length; j++) {
-            if ((vData[j].name.common).includes(cV)) {
+            if ((vData[j].name).includes(cV)) {
                 let box=document.createElement('div')
                 box.className='box'
                 box.innerHTML=`
                     <img src="${vData[j].flags.png}" >
-                    <h2 class="countryN">${vData[j].name.common}</h2>
+                    <h2 class="countryN">${vData[j].name}</h2>
                     <h4>Population: <span>${vData[j].population}</span></h4>
                     <h4>Region: <span>${vData[j].region}</span></h4>
                     <h4>Capital: <span>${vData[j].capital}</span></h4>
@@ -113,6 +114,12 @@ function searchValue(v){
         countriesC.innerHTML=''
         addCountries(vData)
     }
+    // add dark or night mood to box when search
+    if (document.querySelector('nav').classList.contains("light-dark")) {
+        document.querySelectorAll('.box ').forEach((b)=>{
+            b.classList.toggle('box-dark')
+        })
+    }
 }
 // region filter
 document.querySelector('.filter-by-region .filter-head').onclick=function () {
@@ -121,7 +128,7 @@ document.querySelector('.filter-by-region .filter-head').onclick=function () {
 // filter
 document.querySelectorAll('.filter-by-region .continent li').forEach((f)=>{
     f.addEventListener('click',()=>{
-        countriesC.innerHTML=""
+        countriesC.innerHTML="";
         if (f.textContent!="All") {
             for (let i = 0; i < vData.length; i++) {
                 if ((vData[i].region)==f.textContent) {
@@ -143,7 +150,13 @@ document.querySelectorAll('.filter-by-region .continent li').forEach((f)=>{
         }else{
             addCountries(vData)
         }
-        document.querySelector('.filter-by-region .filter-head span').textContent=f.textContent
+        document.querySelector('.filter-by-region .filter-head span').textContent=f.textContent;
+        // add dark or night mood to box when click on region
+        if (document.querySelector('nav').classList.contains("light-dark")) {
+            document.querySelectorAll('.box ').forEach((b)=>{
+                b.classList.toggle('box-dark')
+            })
+        }
     })
 })
 

@@ -18,16 +18,18 @@ body{
 }
 body.dark{
     background-color:  hsl(209, 23%, 22%) !important;
+}
+nav.light-dark ,.box.light-dark, .search-by-name.light-dark ,.filter-by-region ul.light-dark ,.filter-head.light-dark{
+    background-color:  hsl(207, 26%, 17%) !important;
     color: white;
 }
-nav.light-dark ,.box.light-dark,.filter-by-region ul.light-dark ,.filter-head.light-dark{
-    background-color:  hsl(207, 26%, 17%) !important;
+.search-by-name.light-dark input{
+    color: white;
 }
-
 .box.box-dark{
    box-shadow: 0 0 5px #1c1717 !important; 
    background-color:  hsl(207, 26%, 17%) !important;
-  
+   color: white;
 }
 nav{
     background-color: white;
@@ -42,11 +44,13 @@ nav .switch-theme{
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
-    background-color: hsl(207, 26%, 17%)
+    background-color: hsl(207, 26%, 17%);
+    color: white;
+    user-select: none;
 }
 nav .switch-theme.bColor{
     background-color: white;
-    color: hsl(207, 26%, 17%);
+    color: hsl(209, 23%, 22%);
 }
 nav .switch-theme .hidden{
     display: none;
@@ -59,35 +63,46 @@ nav .switch-theme .hidden{
     padding: 20px;
     position: relative;
 }
-.main-page header .search-by-name #search{
-    padding: 10px;
-    font-size: 17px;
+.main-page header .search-by-name{
     background-color: var(--primaryC);
+    padding: 10px;
+    border-radius: 5px;
+}
+.main-page header .search-by-name i{
+    padding-right: 8px;
+}
+.main-page header .search-by-name #search{
+    font-size: 17px;
+    background: none;
     border: none;
+    padding: 5px;
 }  
 .main-page header .filter-by-region{
     position: absolute;
-    top: 0;
-    right: 6px;
+    top: 10px;
+    right: 13px;
     padding: 10px;
     overflow: hidden;
     cursor: pointer;
+    user-select: none;
     transition: 0.2s;
     height: 50px;
 }
-/* كلاس جافاسكربت  */
 .filter-by-region.filter-height{
     height: 300px  !important;
 }
 .main-page header .filter-by-region .filter-head{
     background-color: var(--primaryC);
     padding: 10px;
-    width: 102px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border-radius: 5px;
+    width: 150px;
 }
-
+.filter-by-region .filter-head i{
+    padding: 0px 5px;
+}
 .main-page header .filter-by-region ul{
     background-color: var(--primaryC);
     height: fit-content;
@@ -95,10 +110,22 @@ nav .switch-theme .hidden{
     box-shadow: 0 0 1px 1px #cbcbcb;
 }
 .main-page header .filter-by-region ul li{
-    padding: 10px;
-    text-align: center;
+    padding: 10px 20px;
     
 }
+@media (max-width: 768px) {
+    .main-page header .search-by-name{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .main-page header .search-by-name #search{
+        width: 88%;
+    }   
+    .main-page header .filter-by-region {
+        top: 66px;
+        right: 52%;
+    }
+  }
 .countries  .container{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(213px, 1fr));
@@ -130,12 +157,11 @@ nav .switch-theme .hidden{
 }
 .main-page .details div .container{
     display: flex;
+    flex-flow: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(50%);
 }
 /* .main-page .details .container >div{
     height: 200px;
@@ -147,10 +173,15 @@ nav .switch-theme .hidden{
     width: 45%;
 }
 .main-page .details .container >div:first-child img{
-
+    width: 100%;
 }
 .main-page .details .container .detail-content{
-    width: 45%;
+    width: 50%;
+}
+.main-page .details .container .detail-content >div{
+   display: flex;
+   justify-content: space-between;
+   margin: 25px 0;
 }
 .main-page .back{
     position: absolute;
@@ -168,7 +199,30 @@ nav .switch-theme .hidden{
 
 .main-page .details .container >div p{
     font-size: 16px;
+    padding: 5px;
 }
 .main-page .details .container span{
-    padding: 5px;
+    padding: 7px;
+    color: #625757;
+}
+@media (max-width: 768px){
+    .main-page .details div .container{
+        transform: none;
+    } 
+    .main-page .details .container >div:first-child {
+        width: 100%;
+        margin: 90px 0 20px;
+    }
+    .main-page .details .container .detail-content {
+        width: 100%;
+    }
+    .main-page .details .container .detail-content >div {
+        flex-direction: column;
+        height: 244px;;
+    }
+    .main-page .back {
+        position: absolute;
+        top: 5%;
+        border-radius: 5px;
+    }
 }
