@@ -119,11 +119,11 @@ nav .switch-theme .hidden{
         margin-bottom: 50px;
     }
     .main-page header .search-by-name #search{
-        width: 88%;
+        width: 86%;
     }   
     .main-page header .filter-by-region {
         top: 66px;
-        right: 52%;
+        right: 36%;
     }
   }
 .countries  .container{
